@@ -25,5 +25,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/solr.sh"
   config.vm.provision "shell", path: "./install_scripts/fedora4.sh", args: home_dir
   config.vm.provision "shell", path: "./install_scripts/fuseki.sh"
+  config.vm.provision "shell", path: "./install_scripts/fedora_message_consumer.sh", args: home_dir
 
 end
