@@ -1,16 +1,43 @@
 # fedora4-vm
 Fedora 4 Vagrant Virtual Machine 
 
-###Prerequisites
-* Vagrant
+###Requires
+* [Vagrant](https://www.vagrantup.com/)
+* [VirtualBox](https://www.virtualbox.org/)
 
 ###Provides
 * Ubuntu 64bit machine with 
   + [Tomcat 7](http://tomcat.apache.org) at *http://localhost:8080*
+    * Manager username = "fedora4", password = "fedora4"
   + [Fedora 4.1.0](http://fedora.info/about) at *http://localhost:8080/fcrepo*
+    * No authentication configured
   + [Solr 4.10.3](http://lucene.apache.org/solr/) at *http://localhost:8080/solr*
   + [Fuseki 1.1.1](http://jena.apache.org/documentation/serving_data/index.html) at *http://localhost:3030*
+    * Dataset Path name "/test"
   + [Fcrepo-message-consumer 4.1.0](https://github.com/fcrepo4/fcrepo-message-consumer)
+
+###Usage
+* Install Vagrant and VirtualBox
+* Clone this repository 
+* `cd fedora4-vm`
+* `vagrant up`
+
+###Support
+
+If you receive the following error:
+```
+There are errors in the configuration of this machine, Please fix the following errors and try again:
+
+vm:
+* The box 'ubuntu/trusty64' could not be found.
+```
+
+Edit the file **Vagrantfile**, find the lines:
+```
+# Below needed for Vagrant versions < 1.6.x
+# config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+```
+and un-comment the **config.vm.box\_url** line, save the file and retry.
 
 ###Thanks
 This VM setup was heavily influenced (read: stolen) from [Islandora 2.x VM](https://github.com/Islandora-Labs/islandora/tree/7.x-2.x/install)
