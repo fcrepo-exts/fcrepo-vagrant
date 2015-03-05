@@ -8,7 +8,7 @@ mkdir $SOLR_HOME
 
 cd /tmp
 echo -n "Downloading Solr..."
-wget http://archive.apache.org/dist/lucene/solr/"$SOLR_VERSION"/solr-"$SOLR_VERSION".tgz
+wget -q http://archive.apache.org/dist/lucene/solr/"$SOLR_VERSION"/solr-"$SOLR_VERSION".tgz
 echo " done"
 echo "Extracting Solr"
 tar -xzf solr-"$SOLR_VERSION".tgz
@@ -17,7 +17,7 @@ chown tomcat7:tomcat7 /var/lib/tomcat7/webapps/solr.war
 
 cd /usr/share/tomcat7/lib
 echo -n "Downloading commons-logging..."
-wget http://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.2/commons-logging-1.1.2.jar
+wget -q http://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.2/commons-logging-1.1.2.jar
 echo " done"
 
 cp /tmp/solr-"$SOLR_VERSION"/example/lib/ext/slf4j* /usr/share/tomcat7/lib

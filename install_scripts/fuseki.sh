@@ -13,5 +13,11 @@ tar -xzvf jena-fuseki-"$FUSEKI_VERSION"-distribution.tar.gz
 cd jena-fuseki-"$FUSEKI_VERSION"
 mv -v * $FUSEKI_HOME
 chown -hR tomcat7:tomcat7 $FUSEKI_HOME
-cd $FUSEKI_HOME
-./fuseki-server --update --mem /test &
+
+mkdir "$FUSEKI_HOME/test_data"
+ln -s $FUSEKI_HOME/fuseki /etc/init.d
+echo 'FUSEKI_HOME="$FUSEKI_HOME"' > /etc/default/fuseki
+echo "FUSEKI_ARGS=\"--update --loc=$FUSEKI_HOME/test_data /test\"" >> /etc/default/fuseki
+
+/etc/init.d/fuseki start
+

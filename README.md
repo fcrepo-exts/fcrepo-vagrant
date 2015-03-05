@@ -12,9 +12,13 @@ Fedora 4 Vagrant Virtual Machine
   + [Fedora 4.1.0](http://fedora.info/about) at *http://localhost:8080/fcrepo*
     * No authentication configured
   + [Solr 4.10.3](http://lucene.apache.org/solr/) at *http://localhost:8080/solr*
+    * Installed in "/var/lib/tomcat7/solr"
   + [Fuseki 1.1.1](http://jena.apache.org/documentation/serving_data/index.html) at *http://localhost:3030*
+    * Installed in "/usr/share/fuseki"
     * Dataset Path name "/test"
+    * Persistent storage "/usr/share/fuseki/temp\_data"
   + [Fcrepo-message-consumer 4.1.0](https://github.com/fcrepo4/fcrepo-message-consumer)
+    * Installed in Tomcat container
 
 ###Usage
 * Install Vagrant and VirtualBox
