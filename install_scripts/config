@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# Contain Environment variables for installs
+#
+
+HOME_DIR="/home/vagrant"
+
+SHARED_DIR="/vagrant"
+
+DOWNLOAD_DIR="$SHARED_DIR/downloads"
+if [ ! -d $DOWNLOAD_DIR ]; then
+  mkdir $DOWNLOAD_DIR
+fi
+
+FEDORA_VERSION=4.1.0
+
+FUSEKI_VERSION=1.1.2
+FUSEKI_HOME=/usr/share/fuseki
+
+SOLR_VERSION=4.10.3
+SOLR_HOME=/var/lib/tomcat7/solr

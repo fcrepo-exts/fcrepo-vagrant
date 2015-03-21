@@ -4,15 +4,21 @@
 
 echo "Installing Fedora Message Consumer"
 
-HOME_DIR=$1
-FEDORA_VERSION=4.1.0
+SHARED_DIR=$1
+
+if [ -f "$SHARED_DIR/install_scripts/config" ]; then
+  . $SHARED_DIR/install_scripts/config
+fi
 
 cd $HOME_DIR
 
-echo -n "Downloading Fedora Message Consumer..."
-wget -q -O fcrepo-message-consumer.war "https://github.com/fcrepo4/fcrepo-message-consumer/releases/download/fcrepo-message-consumer-${FEDORA_VERSION}/fcrepo-message-consumer-webapp-${FEDORA_VERSION}.war"
-echo " done"
-mv fcrepo-message-consumer.war /var/lib/tomcat7/webapps
+if [ ! -f "$DOWNLOAD_DIR/fcrepo-message-consumer-webapp-${FEDORA_VERSION}.war" ]; then
+  echo -n "Downloading Fedora Message Consumer..."
+  wget -q -O "$DOWNLOAD_DIR/fcrepo-message-consumer-webapp-${FEDORA_VERSION}.war" "https://github.com/fcrepo4/fcrepo-message-consumer/releases/download/fcrepo-message-consumer-${FEDORA_VERSION}/fcrepo-message-consumer-webapp-${FEDORA_VERSION}.war"
+  echo " done"
+fi
+
+cp "$DOWNLOAD_DIR/fcrepo-message-consumer-webapp-${FEDORA_VERSION}.war" /var/lib/tomcat7/webapps/fcrepo-message-consumer.war
 chown tomcat7:tomcat7 /var/lib/tomcat7/webapps/fcrepo-message-consumer.war
 service tomcat7 restart
 

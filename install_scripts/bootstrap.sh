@@ -2,7 +2,11 @@
 # BASICS
 ###
 
-HOME_DIR=$1
+SHARED_DIR=$1
+
+if [ -f "$SHARED_DIR/install_scripts/config" ]; then
+  . $SHARED_DIR/install_scripts/config
+fi
 
 cd $HOME_DIR
 
