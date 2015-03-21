@@ -13,7 +13,7 @@ Fedora 4 Vagrant Virtual Machine
     * No authentication configured
   + [Solr 4.10.3](http://lucene.apache.org/solr/) at *http://localhost:8080/solr*
     * Installed in "/var/lib/tomcat7/solr"
-  + [Fuseki 1.1.1](http://jena.apache.org/documentation/serving_data/index.html) at *http://localhost:3030*
+  + [Fuseki 1.1.2](http://jena.apache.org/documentation/serving_data/index.html) at *http://localhost:3030*
     * Installed in "/usr/share/fuseki"
     * Dataset Path name "/test"
     * Persistent storage "/usr/share/fuseki/temp\_data"
