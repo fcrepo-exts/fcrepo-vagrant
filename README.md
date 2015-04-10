@@ -23,7 +23,7 @@ Fedora 4 Vagrant Virtual Machine
 ###Usage
 * Install Vagrant and VirtualBox
 * Clone this repository 
-* `cd fedora4-vm`
+* `cd fcrepo4-vagrant`
 * `vagrant up`
 
 ###Support
