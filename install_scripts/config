@@ -13,6 +13,8 @@ if [ ! -d $DOWNLOAD_DIR ]; then
 fi
 
 FEDORA_VERSION=4.1.1
+# true to enable auth, false to disable it
+FEDORA_AUTH=false
 
 FUSEKI_VERSION=1.1.2
 FUSEKI_HOME=/usr/share/fuseki
