@@ -10,7 +10,7 @@ Fedora 4 Vagrant Virtual Machine
   + [Tomcat 7](http://tomcat.apache.org) at *http://localhost:8080*
     * Manager username = "fedora4", password = "fedora4"
   + [Fedora 4.1.0](http://fedora.info/about) at *http://localhost:8080/fcrepo*
-    * No authentication configured
+    * No authentication configured by default
   + [Solr 4.10.3](http://lucene.apache.org/solr/) at *http://localhost:8080/solr*
     * Installed in "/var/lib/tomcat7/solr"
   + [Fuseki 1.1.2](http://jena.apache.org/documentation/serving_data/index.html) at *http://localhost:3030*
@@ -24,6 +24,8 @@ Fedora 4 Vagrant Virtual Machine
 * Install Vagrant and VirtualBox
 * Clone this repository 
 * `cd fcrepo4-vagrant`
+* (optional) to enable role-based access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to true.
+  This will enable a user account `testuser` with the password `password1`, and an admin account `fedoraAdmin` with the password `secret3`.
 * `vagrant up`
 
 ###Support
