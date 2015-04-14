@@ -25,7 +25,10 @@ Fedora 4 Vagrant Virtual Machine
 * Clone this repository 
 * `cd fcrepo4-vagrant`
 * (optional) to enable role-based access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to true.
-  This will enable a user account `testuser` with the password `password1`, and an admin account `fedoraAdmin` with the password `secret3`.
+  This will enable three accounts:
+  * user account `testuser`, with password `password1`
+  * user account `adminuser`, with password `password2`
+  * admin account `fedoraAdmin` with the password `secret3`
 * `vagrant up`
 
 ###Support
