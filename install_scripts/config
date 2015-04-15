@@ -16,8 +16,9 @@ FEDORA_VERSION=4.1.1
 # true to enable auth, false to disable it
 FEDORA_AUTH=false
 
-FUSEKI_VERSION=1.1.2
-FUSEKI_HOME=/usr/share/fuseki
+FUSEKI_VERSION=2.0.0
+FUSEKI_HOME=/etc/fuseki
+FUSEKI_DEPLOY=/var/lib/tomcat7/webapps
 
 SOLR_VERSION=4.10.3
 SOLR_HOME=/var/lib/tomcat7/solr
