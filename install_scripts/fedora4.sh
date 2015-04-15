@@ -11,11 +11,12 @@ if [ -f "$SHARED_DIR/install_scripts/config" ]; then
 fi
 
 if [ "${FEDORA_AUTH}" = "true" ]; then
-  PLUS_DIR="-plus"
-  PLUS_FILE="-plus-rbacl"
+  WEBAPP="fcrepo-webapp-plus-rbacl-${FEDORA_VERSION}.war"
+  RELEASES="https://github.com/fcrepo4-labs/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_VERSION}"
+else
+  WEBAPP="fcrepo-webapp-${FEDORA_VERSION}.war"
+  RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_VERSION}"
 fi
-RELEASES="https://github.com/fcrepo4-labs/fcrepo-webapp${PLUS_DIR}/releases/download/fcrepo-webapp${PLUS_DIR}-${FEDORA_VERSION}"
-WEBAPP="fcrepo-webapp${PLUS_FILE}-${FEDORA_VERSION}.war"
 
 cd $HOME_DIR
 
