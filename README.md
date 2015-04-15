@@ -1,4 +1,4 @@
-# fedora4-vm
+# fcrepo4-vagrant
 Fedora 4 Vagrant Virtual Machine 
 
 ###Requires
