@@ -17,7 +17,7 @@ FEDORA_VERSION=4.1.1
 FEDORA_AUTH=false
 
 FUSEKI_VERSION=2.0.0
-FUSEKI_HOME=/etc/fuseki
+FUSEKI_BASE=/etc/fuseki
 FUSEKI_DEPLOY=/var/lib/tomcat7/webapps
 
 SOLR_VERSION=4.10.3
