@@ -27,6 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/solr.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fedora4.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fuseki.sh", args: shared_dir
-  config.vm.provision "shell", path: "./install_scripts/fedora_message_consumer.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/fedora_camel_toolbox.sh", args: shared_dir
 
 end

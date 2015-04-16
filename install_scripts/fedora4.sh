@@ -12,10 +12,10 @@ fi
 
 if [ "${FEDORA_AUTH}" = "true" ]; then
   WEBAPP="fcrepo-webapp-plus-rbacl-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-labs/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_VERSION}"
+  RELEASES="https://github.com/fcrepo4-labs/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 else
   WEBAPP="fcrepo-webapp-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_VERSION}"
+  RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_TAG}"
 fi
 
 cd $HOME_DIR
