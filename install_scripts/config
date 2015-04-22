@@ -16,6 +16,9 @@ FEDORA_VERSION=4.1.2-SNAPSHOT
 FEDORA_TAG=4.1.1-audit.0
 # true to enable auth, false to disable it
 FEDORA_AUTH=false
+FEDORA_AUDIT=false
+FEDORA_AUDIT_LOCATION=/audit
+
 
 FUSEKI_VERSION=1.1.2
 FUSEKI_HOME=/usr/share/fuseki
