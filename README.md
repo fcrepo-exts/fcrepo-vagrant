@@ -29,6 +29,7 @@ Fedora 4 Vagrant Virtual Machine
   * user account `testuser`, with password `password1`
   * user account `adminuser`, with password `password2`
   * admin account `fedoraAdmin` with the password `secret3`
+* (optional) to enable fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to true. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 * `vagrant up`
 
 ###Support

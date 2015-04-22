@@ -13,9 +13,12 @@ if [ ! -d $DOWNLOAD_DIR ]; then
 fi
 
 FEDORA_VERSION=4.1.2-SNAPSHOT
-FEDORA_TAG=4.1.1-audit.0
+FEDORA_TAG=4.1.1-audit.1
 # true to enable auth, false to disable it
 FEDORA_AUTH=false
+FEDORA_AUDIT=true
+FEDORA_AUDIT_LOCATION=/audit
+
 
 FUSEKI_VERSION=1.1.2
 FUSEKI_HOME=/usr/share/fuseki
