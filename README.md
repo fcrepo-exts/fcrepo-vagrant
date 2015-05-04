@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 # fcrepo4-vagrant
-=======
-# fedora4-vm
-
->>>>>>> Address #1, #2, #3 for FCREPO-1461.
 Fedora 4 Vagrant Virtual Machine 
 
 ## Requirements
