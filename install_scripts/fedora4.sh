@@ -41,7 +41,7 @@ chown tomcat7:tomcat7 /var/lib/tomcat7/webapps/fcrepo.war
 
 if [ "${FEDORA_AUDIT}" = "true" ]; then
   echo $'\n' >>  /etc/default/tomcat7;
-  echo "CATALINA_OPTS=\"-Dfcrepo.audit.container=/audit\"" >> /etc/default/tomcat7;
+  echo "CATALINA_OPTS=\"-Dfcrepo.audit.container=${FEDORA_AUDIT_LOCATION}\"" >> /etc/default/tomcat7;
 fi 
 
 service tomcat7 restart
