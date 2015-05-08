@@ -13,7 +13,7 @@ if [ ! -d $DOWNLOAD_DIR ]; then
 fi
 
 FEDORA_VERSION=4.1.2-SNAPSHOT
-FEDORA_TAG=4.1.1-audit.1
+FEDORA_TAG=4.1.1-audit.2
 # true to enable auth, false to disable it
 FEDORA_AUTH=false
 FEDORA_AUDIT=true

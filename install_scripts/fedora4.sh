@@ -39,9 +39,10 @@ fi
 cp "$DOWNLOAD_DIR/$WEBAPP" /var/lib/tomcat7/webapps/fcrepo.war
 chown tomcat7:tomcat7 /var/lib/tomcat7/webapps/fcrepo.war
 
-if [ "${FEDORA_AUDIT}" = "true" ]; then
+AUDIT_LOCATION_ARG="fcrepo.audit.container"
+if [ "${FEDORA_AUDIT}" == "true" ] && ! grep -q "${AUDIT_LOCATION_ARG}" /etc/default/tomcat7 ; then
   echo $'\n' >>  /etc/default/tomcat7;
-  echo "CATALINA_OPTS=\"-Dfcrepo.audit.container=${FEDORA_AUDIT_LOCATION}\"" >> /etc/default/tomcat7;
+  echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.audit.container=${FEDORA_AUDIT_LOCATION}\"" >> /etc/default/tomcat7;
 fi 
 
 service tomcat7 restart
