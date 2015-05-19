@@ -16,6 +16,10 @@ if ! grep -q "role rolename=\"fedoraAdmin\"" /etc/tomcat7/tomcat-users.xml ; the
   $i<user username="fedora4" password="fedora4" roles="manager-gui"/>' /etc/tomcat7/tomcat-users.xml
 fi
 
+if ! grep -q "/usr/lib/jvm/java-8-oracle" /etc/default/tomcat7 ; then
+  echo "JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /etc/default/tomcat7
+fi
+
 # Make the ingest directory
 mkdir /mnt/ingest
 chown -R tomcat7:tomcat7 /mnt/ingest
