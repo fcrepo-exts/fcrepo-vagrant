@@ -8,8 +8,8 @@ Fedora 4 Vagrant Virtual Machine
 
 ## Usage
 
-1. `git clone git@github.com:fcrepo4-labs/fcrepo4-vagrant.git`
-2. `fcrepo4-vagrant`
+1. `git clone https://github.com/fcrepo4-labs/fcrepo4-vagrant.git`
+2. `cd fcrepo4-vagrant`
 3. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
