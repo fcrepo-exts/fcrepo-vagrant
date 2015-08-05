@@ -27,7 +27,7 @@ mkdir "$FUSEKI_HOME/test_data"
 ln -s $FUSEKI_HOME/fuseki /etc/init.d
 echo "FUSEKI_HOME=\"$FUSEKI_HOME\"" > /etc/default/fuseki
 echo "FUSEKI_ARGS=\"--update --loc=$FUSEKI_HOME/test_data /test\"" >> /etc/default/fuseki
-update-rc.d fuseki start 20 3 4 5 . stop 20 0 1 2 6 .
+update-rc.d fuseki start 20 2 3 4 5 . stop 20 0 1 6 .
 
 /etc/init.d/fuseki start
 

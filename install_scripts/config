@@ -12,7 +12,13 @@ if [ ! -d $DOWNLOAD_DIR ]; then
   mkdir $DOWNLOAD_DIR
 fi
 
-FEDORA_VERSION=4.1.1
+FEDORA_VERSION=4.3.0
+FEDORA_TAG=4.3.0
+# true to enable auth, false to disable it
+FEDORA_AUTH=false
+FEDORA_AUDIT=true
+FEDORA_AUDIT_LOCATION=/audit
+
 
 FUSEKI_VERSION=1.3.0
 FUSEKI_HOME=/usr/share/fuseki
