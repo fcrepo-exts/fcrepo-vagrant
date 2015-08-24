@@ -6,28 +6,25 @@ if [ -f "$SHARED_DIR/install_scripts/config" ]; then
   . $SHARED_DIR/install_scripts/config
 fi
 
-if [ ! -d $FUSEKI_HOME ]; then
-  mkdir $FUSEKI_HOME
+if [ ! -d $FUSEKI_BASE ]; then
+  mkdir $FUSEKI_BASE
+  chown -hR tomcat7:tomcat7 $FUSEKI_BASE
 fi
 
-if [ ! -f "$DOWNLOAD_DIR/jena-fuseki1-$FUSEKI_VERSION-distribution.tar.gz" ]; then
+if [ ! -f "$DOWNLOAD_DIR/apache-jena-fuseki-$FUSEKI_VERSION-distribution.tar.gz" ]; then
   echo -n "Downloading Fuseki..."
-  wget -q -O "$DOWNLOAD_DIR/jena-fuseki1-$FUSEKI_VERSION-distribution.tar.gz" "http://www.apache.org/dist/jena/binaries/jena-fuseki1-"$FUSEKI_VERSION"-distribution.tar.gz"
+  wget -q -O "$DOWNLOAD_DIR/apache-jena-fuseki-$FUSEKI_VERSION-distribution.tar.gz" "http://www.us.apache.org/dist/jena/binaries/apache-jena-fuseki-$FUSEKI_VERSION.tar.gz"
   echo " done"
 fi
 
 cd /tmp
-cp "$DOWNLOAD_DIR/jena-fuseki1-$FUSEKI_VERSION-distribution.tar.gz" /tmp
-tar -xzvf jena-fuseki1-"$FUSEKI_VERSION"-distribution.tar.gz
-cd jena-fuseki1-"$FUSEKI_VERSION"
-mv -v * $FUSEKI_HOME
-chown -hR tomcat7:tomcat7 $FUSEKI_HOME
-
-mkdir "$FUSEKI_HOME/test_data"
-ln -s $FUSEKI_HOME/fuseki /etc/init.d
-echo "FUSEKI_HOME=\"$FUSEKI_HOME\"" > /etc/default/fuseki
-echo "FUSEKI_ARGS=\"--update --loc=$FUSEKI_HOME/test_data /test\"" >> /etc/default/fuseki
-update-rc.d fuseki start 20 2 3 4 5 . stop 20 0 1 6 .
-
-/etc/init.d/fuseki start
-
+cp "$DOWNLOAD_DIR/apache-jena-fuseki-$FUSEKI_VERSION-distribution.tar.gz" /tmp
+tar -xzvf apache-jena-fuseki-"$FUSEKI_VERSION"-distribution.tar.gz
+cd apache-jena-fuseki-"$FUSEKI_VERSION"
+mv -v fuseki.war $FUSEKI_DEPLOY
+chown -hR tomcat7:tomcat7 $FUSEKI_DEPLOY/fuseki.war
+service tomcat7 restart
+sleep 20
+cp $SHARED_DIR/config/shiro.ini $FUSEKI_BASE
+cp $SHARED_DIR/config/test.ttl $FUSEKI_BASE/configuration
+service tomcat7 restart

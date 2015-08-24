@@ -20,8 +20,9 @@ FEDORA_AUDIT=true
 FEDORA_AUDIT_LOCATION=/audit
 
 
-FUSEKI_VERSION=1.3.0
-FUSEKI_HOME=/usr/share/fuseki
+FUSEKI_VERSION=2.3.0
+FUSEKI_BASE=/etc/fuseki
+FUSEKI_DEPLOY=/var/lib/tomcat7/webapps
 
 SOLR_VERSION=4.10.3
 SOLR_HOME=/var/lib/tomcat7/solr
