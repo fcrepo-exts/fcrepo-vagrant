@@ -12,13 +12,13 @@ fi
 
 if [ "${FEDORA_AUTH}" = "true" ] && [ "${FEDORA_AUDIT}" = "true" ]; then
   WEBAPP="fcrepo-webapp-plus-rbacl-audit-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-labs/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 elif [ "${FEDORA_AUTH}" = "true" ]; then
   WEBAPP="fcrepo-webapp-plus-rbacl-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-labs/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 elif [ "${FEDORA_AUDIT}" = "true" ]; then
   WEBAPP="fcrepo-webapp-plus-audit-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-labs/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 else 
   WEBAPP="fcrepo-webapp-${FEDORA_VERSION}.war"
   RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_TAG}"
