@@ -60,6 +60,20 @@ Edit the file **Vagrantfile**, find the lines:
 ```
 and un-comment the **config.vm.box\_url** line, save the file and retry.
 
+## Windows Troubleshooting
+
+If you receive errors involving `\r` (end of line):
+
+Edit the global `.gitconfig` file, find the line:
+```
+autocrlf = true
+```
+and change it to
+```
+autocrlf = false
+```
+Remove and clone again. This will prevent windows git clients from automatically replacing unix line endings LF with windows line endings CRLF.
+
 ## Thanks
 
 This VM setup was heavily influenced (read: stolen) from [Islandora 2.x VM](https://github.com/Islandora-Labs/islandora/tree/7.x-2.x/install).
