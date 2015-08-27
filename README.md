@@ -23,14 +23,15 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * No authentication configured
   * [Solr 4.10.3](http://lucene.apache.org/solr/) at [http://localhost:8080/solr](http://localhost:8080/solr), for indexing & searching your content.
     * Installed in "/var/lib/tomcat7/solr"
-  * [Fuseki 1.1.2](http://jena.apache.org/documentation/serving_data/index.html) at [http://localhost:3030](http://localhost:3030), for querying and updating.
-    * Installed in "/usr/share/fuseki"
+  * [Fuseki 2.3.0](http://jena.apache.org/documentation/fuseki2/) at [http://localhost:8080/fuseki](http://localhost:8080/fuseki), for querying and updating.
+    * Installed in "/etc/fuseki"
     * Dataset Path name "/test"
-    * Persistent storage "/usr/share/fuseki/temp\_data"
+    * Persistent storage "/etc/fuseki/databases/test\_data"
   * [Fcrepo-camel-toolbox 4.1.1](https://github.com/fcrepo4-labs/fcrepo-camel-toolbox)
     * Installed in Tomcat container
 
 ###Usage
+
 * Install Vagrant and VirtualBox
 * Clone this repository 
 * `cd fcrepo4-vagrant`
@@ -61,4 +62,4 @@ and un-comment the **config.vm.box\_url** line, save the file and retry.
 
 ## Thanks
 
-This VM setup was heavily influenced (read: stolen) from [Islandora 2.x VM](https://github.com/Islandora-Labs/islandora/tree/7.x-2.x/install)
+This VM setup was heavily influenced (read: stolen) from [Islandora 2.x VM](https://github.com/Islandora-Labs/islandora/tree/7.x-2.x/install).

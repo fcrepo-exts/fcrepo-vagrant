@@ -24,6 +24,7 @@ cd apache-jena-fuseki-"$FUSEKI_VERSION"
 mv -v fuseki.war $FUSEKI_DEPLOY
 chown -hR tomcat7:tomcat7 $FUSEKI_DEPLOY/fuseki.war
 service tomcat7 restart
+# Need to sleep for a bit while Fuseki deploys for the first time.
 sleep 20
 cp $SHARED_DIR/config/shiro.ini $FUSEKI_BASE
 cp $SHARED_DIR/config/test.ttl $FUSEKI_BASE/configuration
