@@ -26,3 +26,5 @@ FUSEKI_DEPLOY=/var/lib/tomcat7/webapps
 
 SOLR_VERSION=4.10.3
 SOLR_HOME=/var/lib/tomcat7/solr
+
+KARAF_VERSION=4.0.1
