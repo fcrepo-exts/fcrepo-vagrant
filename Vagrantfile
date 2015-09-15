@@ -13,6 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
 	config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
+	config.vm.network :forwarded_port, guest: 9000, host: 9000 # Fixity
+	config.vm.network :forwarded_port, guest: 9080, host: 9080 # Reindexing
 
   config.vm.provider "virtualbox" do |v|
   	v.memory = 2048
@@ -20,12 +22,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   shared_dir = "/vagrant"
 
-	config.vm.provision "shell", path: "./install_scripts/bootstrap.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/bootstrap.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/java.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/tomcat7.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/solr.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fedora4.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fuseki.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/karaf.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fedora_camel_toolbox.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/imagemagick.sh"
 
 end

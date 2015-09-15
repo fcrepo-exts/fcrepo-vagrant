@@ -7,7 +7,7 @@ if [ -f "$SHARED_DIR/install_scripts/config" ]; then
 fi
 
 if [ ! -d $FUSEKI_BASE ]; then
-  mkdir $FUSEKI_BASE
+  mkdir -p $FUSEKI_BASE/configuration
   chown -hR tomcat7:tomcat7 $FUSEKI_BASE
 fi
 
