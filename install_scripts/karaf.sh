@@ -1,6 +1,6 @@
-#############
+##############
 # Apache Karaf
-#############
+##############
 
 echo "Installing Apache Karaf"
 
@@ -53,15 +53,14 @@ if [ ! -L "/etc/init.d/karaf-service" ]; then
 fi
 
 # Add the vagrant user's maven repository
-echo "Adding vagrant user's Maven repository... "
-sed -i "s|#org.ops4j.pax.url.mvn.localRepository=|org.ops4j.pax.url.mvn.localRepository=$HOME_DIR/.m2/repository|" /opt/karaf/etc/org.ops4j.pax.url.mvn.cfg
-echo " done"
+if ! grep -q "$HOME_DIR/.m2/repository" /opt/karaf/etc/org.ops4j.pax.url.mvn.cfg ; then
+    echo "Adding vagrant user's Maven repository... "
+    sed -i "s|#org.ops4j.pax.url.mvn.localRepository=|org.ops4j.pax.url.mvn.localRepository=$HOME_DIR/.m2/repository|" /opt/karaf/etc/org.ops4j.pax.url.mvn.cfg
+    echo " done"
+fi
 
 # Start it
 echo "Starting Karaf as a service... "
 service karaf-service start
 sleep 60
 echo " done"
-
-# You can always log into the karaf console once the service is running by executing:
-# /opt/karaf/bin/client
