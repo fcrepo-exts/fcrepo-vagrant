@@ -11,10 +11,10 @@ if [ -f "$SHARED_DIR/install_scripts/config" ]; then
 fi
 
 if [ "${FEDORA_AUTH}" = "true" ] && [ "${FEDORA_AUDIT}" = "true" ]; then
-  WEBAPP="fcrepo-webapp-plus-rbacl-audit-${FEDORA_VERSION}.war"
+  WEBAPP="fcrepo-webapp-plus-webac-audit-${FEDORA_VERSION}.war"
   RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 elif [ "${FEDORA_AUTH}" = "true" ]; then
-  WEBAPP="fcrepo-webapp-plus-rbacl-${FEDORA_VERSION}.war"
+  WEBAPP="fcrepo-webapp-plus-webac-${FEDORA_VERSION}.war"
   RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 elif [ "${FEDORA_AUDIT}" = "true" ]; then
   WEBAPP="fcrepo-webapp-plus-audit-${FEDORA_VERSION}.war"
