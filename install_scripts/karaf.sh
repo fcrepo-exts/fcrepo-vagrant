@@ -43,7 +43,7 @@ if [ ! -L "/etc/init.d/karaf-service" ]; then
     # Run a setup script to add some feature repos and prepare it for running as a service
     /opt/karaf/bin/start
     sleep 60
-    /opt/karaf/bin/client < $SHARED_DIR/install_scripts/karaf_service.script
+    /opt/karaf/bin/client -f $SHARED_DIR/install_scripts/karaf_service.script
     /opt/karaf/bin/stop
 
     # Add it as a Linux service
