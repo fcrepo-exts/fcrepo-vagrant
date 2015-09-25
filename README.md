@@ -74,6 +74,13 @@ autocrlf = false
 ```
 Remove and clone again. This will prevent windows git clients from automatically replacing unix line endings LF with windows line endings CRLF.
 
+## Maintainers
+
+Current maintainers:
+
+* [Nick Ruest](https://github.com/ruebot)
+* [Jared Whiklo](https://github.com/whikloj)
+
 ## Thanks
 
 This VM setup was heavily influenced (read: stolen) from [Islandora 2.x VM](https://github.com/Islandora-Labs/islandora/tree/7.x-2.x/install).
