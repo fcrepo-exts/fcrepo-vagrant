@@ -8,7 +8,7 @@ Fedora 4 Vagrant Virtual Machine
 
 ## Usage
 
-1. `git clone https://github.com/fcrepo4-labs/fcrepo4-vagrant.git`
+1. `git clone https://github.com/fcrepo4-exts/fcrepo4-vagrant.git`
 2. `cd fcrepo4-vagrant`
 3. `vagrant up`
 
@@ -19,7 +19,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Ubuntu 14.04 64-bit machine with: 
   * [Tomcat 7](http://tomcat.apache.org) at [http://localhost:8080](http://localhost:8080)
     * Manager username = "fedora4", password = "fedora4"
-  * [Fedora 4.1.1](http://fedora.info/about) at [http://localhost:8080/fcrepo](http://localhost:8080/fcrepo)
+  * [Fedora 4.x](http://fedora.info/about) at [http://localhost:8080/fcrepo](http://localhost:8080/fcrepo)
     * No authentication configured
   * [Solr 4.10.3](http://lucene.apache.org/solr/) at [http://localhost:8080/solr](http://localhost:8080/solr), for indexing & searching your content.
     * Installed in "/var/lib/tomcat7/solr"
@@ -27,7 +27,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * Installed in "/etc/fuseki"
     * Dataset Path name "/test"
     * Persistent storage "/etc/fuseki/databases/test\_data"
-  * [Fcrepo-camel-toolbox 4.1.1](https://github.com/fcrepo4-labs/fcrepo-camel-toolbox)
+  * [Fcrepo-camel-toolbox 4.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
     * Installed in Tomcat container
 
 ###Usage
@@ -73,6 +73,13 @@ and change it to
 autocrlf = false
 ```
 Remove and clone again. This will prevent windows git clients from automatically replacing unix line endings LF with windows line endings CRLF.
+
+## Maintainers
+
+Current maintainers:
+
+* [Nick Ruest](https://github.com/ruebot)
+* [Jared Whiklo](https://github.com/whikloj)
 
 ## Thanks
 
