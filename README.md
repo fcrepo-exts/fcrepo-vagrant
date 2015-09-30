@@ -60,6 +60,15 @@ Edit the file **Vagrantfile**, find the lines:
 ```
 and un-comment the **config.vm.box\_url** line, save the file and retry.
 
+#### Port 9080 (reindexing service) unavailable after vagrant up
+
+It might happen that during the first `vagrant up` the reindexing service is not installed and the port 9080 is not accessible (try `telnet localhost 9080`). To fix this run `vagrant provision` and check again. If it still does not work, install the services manually:
+```
+vagrant ssh
+cd /opt/karaf/bin
+./client </vagrant/install_scripts/fedora_camel_toolbox.script
+```
+
 ## Windows Troubleshooting
 
 If you receive errors involving `\r` (end of line):
