@@ -17,16 +17,23 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 ## Environment
 
 * Ubuntu 14.04 64-bit machine with: 
-  * [Tomcat 7](http://tomcat.apache.org) at [http://localhost:8080](http://localhost:8080)
+  * [Tomcat 7](http://tomcat.apache.org)
+    * Available at:  [http://localhost:8080](http://localhost:8080)
     * Manager username = "fedora4", password = "fedora4"
-  * [Fedora 4.x](http://fedora.info/about) at [http://localhost:8080/fcrepo](http://localhost:8080/fcrepo)
+  * [Fedora 4.x](http://fedora.info/about)
+    * Available at: [http://localhost:8080/fcrepo](http://localhost:8080/fcrepo)
     * No authentication configured
-  * [Solr 4.10.3](http://lucene.apache.org/solr/) at [http://localhost:8080/solr](http://localhost:8080/solr), for indexing & searching your content.
-    * Installed in "/var/lib/tomcat7/solr"
-  * [Fuseki 2.3.0](http://jena.apache.org/documentation/fuseki2/) at [http://localhost:8080/fuseki](http://localhost:8080/fuseki), for querying and updating.
-    * Installed in "/etc/fuseki"
-    * Dataset Path name "/test"
-    * Persistent storage "/etc/fuseki/databases/test\_data"
+  * [Solr 4.10.3](http://lucene.apache.org/solr/)
+    * Available at: [http://localhost:8080/solr](http://localhost:8080/solr), for indexing & searching your content.
+    * Installed in `/var/lib/tomcat7/solr`
+  * [Apache Karaf](http://karaf.apache.org/)
+    * Installed in `/opt/karaf`
+    * Installed as a service `apache-karaf` 
+  * [Fuseki 2.3.0](http://jena.apache.org/documentation/fuseki2/)
+    * Available at: [http://localhost:8080/fuseki](http://localhost:8080/fuseki), for querying and updating.
+    * Installed in `/etc/fuseki`
+    * Dataset Path name `/test`
+    * Persistent storage `/etc/fuseki/databases/test\_data`
   * [Fcrepo-camel-toolbox 4.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
     * Installed in Tomcat container
 
