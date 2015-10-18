@@ -23,6 +23,9 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * No authentication configured
   * [Solr 4.10.3](http://lucene.apache.org/solr/) at [http://localhost:8080/solr](http://localhost:8080/solr), for indexing & searching your content.
     * Installed in "/var/lib/tomcat7/solr"
+  * [Apache Karaf](http://karaf.apache.org/)
+    * Installed in `/opt/karaf`
+    * Installed as a service `apache-karaf` 
   * [Fuseki 2.3.0](http://jena.apache.org/documentation/fuseki2/) at [http://localhost:8080/fuseki](http://localhost:8080/fuseki), for querying and updating.
     * Installed in "/etc/fuseki"
     * Dataset Path name "/test"
