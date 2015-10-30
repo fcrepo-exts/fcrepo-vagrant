@@ -48,6 +48,9 @@ echo
 END=`date +%s`
 echo `date +%T` "$BATCH: done in" $(( $END - $START )) "seconds"
 
+# Remove temporary files
+rm -rf tmp/$BATCH
+
 # Delete cURL for the current batch
 N=0
 echo `date +%T` "$BATCH: appending curl command to delete batch: $BATCH"

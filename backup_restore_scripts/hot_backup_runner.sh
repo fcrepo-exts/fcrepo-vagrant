@@ -31,6 +31,7 @@ function ctrl_c() {
 			kill $pid
 		fi
 	done
+	echo "Terminated!"
 	exit
 }
 trap ctrl_c INT
@@ -45,7 +46,7 @@ i=0
 while [[ $i -lt $BATCHES ]]
 do
 	echo "Creating loader batch $i" >> hot_backup_runner.log
-	nohup bash genrate_and_load.sh >> hot_backup_runner.log & 
+	nohup bash generate_and_load.sh >> hot_backup_runner.log & 
 
 	# Store all child pids in an array
 	pids[$i]=$!
