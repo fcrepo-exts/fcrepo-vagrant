@@ -3,7 +3,7 @@
 # Creates objects in the repository and loads them with unique datastreams.
 # The number of backups in defined in $OBJ and the size of the datastream is defined in $DSZ.
 
-BASE=http://localhost:8080/fcrepo/rest
+BASE=http://localhost:8080/fcrepo/rest/test
 BATCH=$RANDOM
 
 # Number of objects to load

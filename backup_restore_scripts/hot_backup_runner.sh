@@ -24,8 +24,21 @@ dataload_started=false
 catch_signal_usr1 () { dataload_started=true ;}
 trap catch_signal_usr1 USR1
 
+# Kill all child process on control + c
+function ctrl_c() {
+	for pid in ${pids[@]}; do
+		if ps -p $pid &> /dev/null; then
+			kill $pid
+		fi
+	done
+	exit
+}
+trap ctrl_c INT
+
 # Backup original fcrepo home
-cp -r $FCREPO_HOME ~/backup_restore/fcrepo_home.ORIGINAL
+if [ ! -d ~/backup_restore/fcrepo_home.ORIGINAL ]; then
+	cp -r $FCREPO_HOME ~/backup_restore/fcrepo_home.ORIGINAL
+fi
 
 # Start child processes to load data
 i=0
