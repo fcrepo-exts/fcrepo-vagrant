@@ -50,6 +50,12 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * (optional) to enable fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to true. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 * `vagrant up`
 
+###Acceptance Testing
+
+One may validate the state of the environment provisioned by the BASH scripts using [beaker](https://github.com/puppetlabs/beaker).
+The acceptance tests (implemented using [server-spec](http://serverspec.org/)) may be executed locally in the following manner:
+* `bundle exec rspec spec/acceptance`
+
 ## Support
 
 If you receive the following error:

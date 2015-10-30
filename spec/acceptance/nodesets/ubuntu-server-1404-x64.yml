@@ -1,0 +1,9 @@
+HOSTS:
+  fcrepo4-base:
+    roles:
+      - master
+    platform: ubuntu-14.04-x64
+    box: ruebot/fcrepo4-base
+#    box_url: https://vagrantcloud.com/ruebot/boxes/fcrepo4-base
+#    box: "ubuntu/trusty64"
+    hypervisor: vagrant
