@@ -4,6 +4,7 @@ rvm:
   - 2.2.1
 install:
   - sudo apt-get purge virtualbox
+  - sudo apt-get install -q libsdl1.2debian libvpx1
   - sudo wget -nv http://download.virtualbox.org/virtualbox/5.0.8/virtualbox-5.0_5.0.8-103449~Ubuntu~trusty_amd64.deb
   - sudo dpkg -i virtualbox-5.0_5.0.8-103449~Ubuntu~trusty_amd64.deb
   - sudo apt-get update -q
