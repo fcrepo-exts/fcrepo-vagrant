@@ -2,4 +2,10 @@ language: ruby
 rvm:
   - 2.1.5
   - 2.2.1
+install:
+  - sudo apt-get update -q
+  - sudo apt-get install -q virtualbox --fix-missing
+  - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
+  - sudo dpkg -i vagrant_1.7.4_x86_64.deb
+  - bundle install
 script: bundle exec rspec spec/acceptance
