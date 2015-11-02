@@ -3,6 +3,9 @@ rvm:
   - 2.1.5
   - 2.2.1
 install:
+  - sudo apt-get purge virtualbox
+  - sudo wget -nv http://download.virtualbox.org/virtualbox/5.0.8/virtualbox-5.0_5.0.8-103449~Ubuntu~trusty_amd64.deb
+  - sudo dpkg -i virtualbox-5.0_5.0.8-103449~Ubuntu~trusty_amd64.deb
   - sudo apt-get update -q
   - sudo apt-get install -q virtualbox --fix-missing
   - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
