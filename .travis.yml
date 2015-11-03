@@ -4,7 +4,7 @@ rvm:
   - 2.2.1
 install:
   - sudo apt-get purge virtualbox
-  - sudo apt-get install -q libsdl1.2debian libvpx1
+  - sudo apt-get install -q libsdl1.2debian libvpx1 libvpx0 libpython2.6
   - sudo apt-get update -q
   - sudo apt-get install build-essential linux-headers-generic
 #  - sudo wget -nv http://download.virtualbox.org/virtualbox/5.0.8/VirtualBox-5.0.8-103449-Linux_amd64.run
