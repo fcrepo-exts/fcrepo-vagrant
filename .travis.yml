@@ -7,7 +7,11 @@ install:
   - sudo apt-get install -q libsdl1.2debian libvpx1
   - sudo apt-get update -q
   - sudo apt-get install build-essential linux-headers-generic
-  - sudo apt-get install -q virtualbox --fix-missing
+#  - sudo wget -nv http://download.virtualbox.org/virtualbox/5.0.8/VirtualBox-5.0.8-103449-Linux_amd64.run
+#  - sudo chmod +x VirtualBox-5.0.8-103449-Linux_amd64.run && sudo ./VirtualBox-5.0.8-103449-Linux_amd64.run
+#  - sudo wget -nv http://download.virtualbox.org/virtualbox/4.3.32/virtualbox-4.3_4.3.32-103443~Ubuntu~lucid_amd64.deb
+#  - sudo dpkg -i virtualbox-4.3_4.3.32-103443~Ubuntu~lucid_amd64.deb
+  - sudo apt-get install -q virtualbox virtualbox-ose-dkms --fix-missing
   - VBoxManage --version
   - sudo /etc/init.d/vboxdrv setup
   - VBoxManage --version
