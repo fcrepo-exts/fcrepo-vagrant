@@ -8,6 +8,7 @@ install:
   - sudo wget -nv http://download.virtualbox.org/virtualbox/5.0.8/VirtualBox-5.0.8-103449-Linux_amd64.run
   - sudo chmod +x VirtualBox-5.0.8-103449-Linux_amd64.run && sudo ./VirtualBox-5.0.8-103449-Linux_amd64.run
   - VBoxManage --version
+  - sudo apt-get update -q
   - sudo apt-get install build-essential linux-headers-generic
   - sudo /etc/init.d/vboxdrv setup
   - VBoxManage --version
