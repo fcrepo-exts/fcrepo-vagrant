@@ -7,6 +7,8 @@ install:
   - sudo apt-get install -q libsdl1.2debian libvpx1
   - sudo wget -nv http://download.virtualbox.org/virtualbox/5.0.8/VirtualBox-5.0.8-103449-Linux_amd64.run
   - sudo chmod +x VirtualBox-5.0.8-103449-Linux_amd64.run && sudo ./VirtualBox-5.0.8-103449-Linux_amd64.run
+  - VBoxManage --version
+  - sudo apt-get install linux-headers-$(uname -r)
   - sudo /etc/init.d/vboxdrv setup
   - VBoxManage --version
   - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
