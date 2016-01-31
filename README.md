@@ -42,12 +42,12 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Install Vagrant and VirtualBox
 * Clone this repository 
 * `cd fcrepo4-vagrant`
-* (optional) to enable role-based access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to true.
+* To disable role-based access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to false.
   This will enable three accounts:
   * user account `testuser`, with password `password1`
   * user account `adminuser`, with password `password2`
   * admin account `fedoraAdmin` with the password `secret3`
-* (optional) to enable fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to true. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
+* To disable fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 * `vagrant up`
 
 #### Using the backup and restore scripts
