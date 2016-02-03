@@ -42,12 +42,12 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Install Vagrant and VirtualBox
 * Clone this repository 
 * `cd fcrepo4-vagrant`
-* (optional) to enable role-based access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to true.
+* To disable role-based access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to false.
   This will enable three accounts:
   * user account `testuser`, with password `password1`
   * user account `adminuser`, with password `password2`
   * admin account `fedoraAdmin` with the password `secret3`
-* (optional) to enable fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to true. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
+* To disable fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 * `vagrant up`
 
 ###Acceptance Testing
@@ -55,6 +55,29 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 One may validate the state of the environment provisioned by the BASH scripts using [beaker](https://github.com/puppetlabs/beaker).
 The acceptance tests (implemented using [server-spec](http://serverspec.org/)) may be executed locally in the following manner:
 * `bundle exec rspec spec/acceptance`
+
+#### Using the backup and restore scripts
+The scripts at the ~/backup_restore directory can be used to test backing up and restoring the fedora repository for consistency.
+
+The following command will cause 50 parallel processes to load data to the repository while creating snapshots of fcrepo home directory every 2 seconds.
+
+```
+cd ~/backup_restore/
+./hot_backup_runner.sh 50 /var/lib/tomcat7/fcrepo4-data 2
+```
+
+This will restore the backups created from the `hot_backup_runner.sh` and test if the repository starts successfully.
+
+```
+./restore_runner.sh NON_INTERACTIVE
+```
+
+To manually inspect the state of the repository, the command can be run without the NON_INTERACTIVE option. This
+will cause the script to pause for user input after each restore operation.
+
+```
+./restore_runner.sh
+``` 
 
 ## Support
 
