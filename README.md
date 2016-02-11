@@ -18,11 +18,11 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 * Ubuntu 14.04 64-bit machine with: 
   * [Tomcat 7](http://tomcat.apache.org)
-    * Available at:  [http://localhost:8080](http://localhost:8080)
+    * Available at:  [http://localhost:8080/manager/html](http://localhost:8080/manager/html)
     * Manager username = "fedora4", password = "fedora4"
-  * [Fedora 4.x](http://fedora.info/about)
+  * [Fedora 4.x](http://fedorarepository.org)
     * Available at: [http://localhost:8080/fcrepo](http://localhost:8080/fcrepo)
-    * No authentication configured
+    * Authentication/Authorization configuration detailed below
   * [Solr 4.10.3](http://lucene.apache.org/solr/)
     * Available at: [http://localhost:8080/solr](http://localhost:8080/solr), for indexing & searching your content.
     * Installed in `/var/lib/tomcat7/solr`
@@ -35,23 +35,24 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * Dataset Path name `/test`
     * Persistent storage `/etc/fuseki/databases/test\_data`
   * [Fcrepo-camel-toolbox 4.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
-    * Installed in Tomcat container
+    * Installed in karaf
 
 ###Usage
 
 * Install Vagrant and VirtualBox
 * Clone this repository 
 * `cd fcrepo4-vagrant`
-* To disable role-based access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to false.
-  This will enable three accounts:
-  * user account `testuser`, with password `password1`
-  * user account `adminuser`, with password `password2`
-  * admin account `fedoraAdmin` with the password `secret3`
-* To disable fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
+* By default, WebAC authorization is enabled on this Fedora installation.
+  * Three Fedora user accounts are available:
+    * user account `testuser`, with password `password1`
+    * user account `adminuser`, with password `password2`
+    * admin account `fedoraAdmin` with the password `secret3`
+* To disable access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to false.
+* To disable Fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 * `vagrant up`
 
 #### Using the backup and restore scripts
-The scripts at the ~/backup_restore directory can be used to test backing up and restoring the fedora repository for consistency.
+The scripts at the ~/backup_restore directory can be used to test backing up and restoring the Fedora repository for consistency.
 
 The following command will cause 50 parallel processes to load data to the repository while creating snapshots of fcrepo home directory every 2 seconds.
 
@@ -111,7 +112,7 @@ and change it to
 ```
 autocrlf = false
 ```
-Remove and clone again. This will prevent windows git clients from automatically replacing unix line endings LF with windows line endings CRLF.
+Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.
 
 ## Maintainers
 
