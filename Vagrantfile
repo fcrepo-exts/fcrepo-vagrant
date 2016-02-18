@@ -23,4 +23,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/backup_restore.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fedora_camel_toolbox.sh", args: shared_dir
 
+  config.vm.provision "shell", path: "./install_scripts/ruby.sh"
 end
