@@ -24,4 +24,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/fedora_camel_toolbox.sh", args: shared_dir
 
   config.vm.provision "shell", path: "./install_scripts/ruby.sh"
+  config.vm.provision "shell", path: "./install_scripts/git_clone.sh"
 end
