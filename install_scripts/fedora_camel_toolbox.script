@@ -1,4 +1,4 @@
-feature:repo-add mvn:org.fcrepo.camel/fcrepo-camel-toolbox/LATEST/xml/features
+feature:repo-add mvn:org.fcrepo.camel/toolbox-features/LATEST/xml/features
 feature:install fcrepo-indexing-solr
 feature:install fcrepo-indexing-triplestore
 feature:install fcrepo-reindexing
