@@ -38,8 +38,8 @@ fi
 sleep 10
 if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.fixity.cfg" ]; then
    /opt/karaf/bin/client -u karaf -h localhost -a 8101 "feature:install fcrepo-fixity"
+   sleep 10
 fi
-sleep 10
 sed -i 's|fcrepo.authUsername=$|fcrepo.authUsername=fedoraAdmin|' /opt/karaf/etc/org.fcrepo.camel.fixity.cfg
 sed -i 's|fcrepo.authPassword=$|fcrepo.authPassword=secret3|' /opt/karaf/etc/org.fcrepo.camel.fixity.cfg
 
