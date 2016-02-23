@@ -20,8 +20,8 @@ elif [ "${FEDORA_AUDIT}" = "true" ]; then
   WEBAPP="fcrepo-webapp-plus-audit-${FEDORA_VERSION}.war"
   RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 else 
-  WEBAPP="fcrepo-webapp-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_TAG}"
+  WEBAPP="fcrepo-webapp-plus-${FEDORA_VERSION}.war"
+  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
 fi
 
 cd $HOME_DIR
