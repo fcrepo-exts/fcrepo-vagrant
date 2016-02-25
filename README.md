@@ -51,6 +51,13 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * To disable Fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 * `vagrant up`
 
+####Acceptance Testing
+
+One may validate the state of the environment created by the provisioning process using [beaker](https://github.com/puppetlabs/beaker).
+Please note that the test suite requires that both [Ruby](https://www.ruby-lang.org) (release 2.2.3 and later are supported) and [Bundler](http://bundler.io) (supporting releases 1.10 and later) to be installed within the working environment.
+The acceptance tests (implemented using [server-spec](http://serverspec.org/)) must be executed from outside of the Vagrant Box, using the BASH script `accept.sh`:
+* `source spec/accept.sh`
+
 #### Using the backup and restore scripts
 The scripts at the ~/backup_restore directory can be used to test backing up and restoring the Fedora repository for consistency.
 
