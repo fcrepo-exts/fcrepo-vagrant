@@ -27,5 +27,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", path: "./install_scripts/ruby.sh"
   config.vm.provision "shell", path: "./install_scripts/derivatives.sh", args: shared_dir
-  config.vm.provision "shell", path: "./install_scripts/git_clone.sh", privileged: false
+  config.vm.provision "shell", path: "./install_scripts/git_clone.sh", privileged: false, args: shared_dir
 end
