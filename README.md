@@ -29,7 +29,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
   * [Apache Karaf](http://karaf.apache.org/)
     * Installed in `/opt/karaf`
     * Installed as a service `apache-karaf` 
-  * [Fuseki 2.3.0](http://jena.apache.org/documentation/fuseki2/)
+  * [Fuseki 2.3.1](http://jena.apache.org/documentation/fuseki2/)
     * Available at: [http://localhost:8080/fuseki](http://localhost:8080/fuseki), for querying and updating.
     * Installed in `/etc/fuseki`
     * Dataset Path name `/test`
