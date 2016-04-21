@@ -28,6 +28,7 @@ if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.indexing.triplestore.cfg" ]; then
 fi
 sed -i 's|fcrepo.authUsername=$|fcrepo.authUsername=fedoraAdmin|' /opt/karaf/etc/org.fcrepo.camel.indexing.triplestore.cfg
 sed -i 's|fcrepo.authPassword=$|fcrepo.authPassword=secret3|' /opt/karaf/etc/org.fcrepo.camel.indexing.triplestore.cfg
+sed -i 's|prefer.omit=http://www.w3.org/ns/ldp#PreferContainment$|prefer.omit=|' /opt/karaf/etc/org.fcrepo.camel.indexing.triplestore.cfg
 
 # Audit service
 if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.audit.cfg" ]; then
