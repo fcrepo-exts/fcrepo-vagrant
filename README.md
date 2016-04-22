@@ -72,7 +72,7 @@ will cause the script to pause for user input after each restore operation.
 ``` 
 ## Customizations
 
-The applications installed on this Vagrant box have been customized to support showcasing features. Some of the configuration of these applications may not be recommended for production installations.
+The applications installed on this Vagrant box have been customized to showcase features. Some of the configuration of these applications may not be recommended for production installations.
 Application customizations are found in the [install_scripts](install_scripts) directory.
 
 ### Fedora Customizations
@@ -90,9 +90,9 @@ The following services have been configured with Fedora credentials:
 
 The Solr indexer has been configured to communicate with Solr running on port 8080, instead of the default 8983.
 
-The triplestore indexer has been configurated to NOT include any `Prefer` headers. The production default is to limit the triples to be indexed by omitting `ldp:contains` triples.
+The triplestore indexer has been configured to NOT include any `Prefer` headers. The production default is to limit the triples to be indexed by omitting `ldp:contains` triples.
 
-The reindexing service has been configurated to bind to the host, `0.0.0.0`, instead of the default `localhost`. This allows the reindexing service to be accessible from outside of the Vagrant VM, i.e. from the host machine. See [camel-jetty documentation](http://camel.apache.org/jetty.html), search for: "Usage of localhost".
+The reindexing service has been configured to bind to the host, `0.0.0.0`, instead of the default `localhost`. This allows the reindexing service to be accessible from outside of the Vagrant VM, i.e. from the host machine. See [camel-jetty documentation](http://camel.apache.org/jetty.html), search for: "Usage of localhost".
 
 ## Support
 
