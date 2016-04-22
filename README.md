@@ -8,9 +8,10 @@ Fedora 4 Vagrant Virtual Machine
 
 ## Usage
 
-1. `git clone https://github.com/fcrepo4-exts/fcrepo4-vagrant.git`
-2. `cd fcrepo4-vagrant`
-3. `vagrant up`
+1. Install Vagrant and VirtualBox
+2. `git clone https://github.com/fcrepo4-exts/fcrepo4-vagrant.git`
+3. `cd fcrepo4-vagrant`
+4. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
@@ -37,21 +38,17 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
   * [Fcrepo-camel-toolbox 4.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
     * Installed in karaf
 
-###Usage
+### Fedora Configuration
 
-* Install Vagrant and VirtualBox
-* Clone this repository 
-* `cd fcrepo4-vagrant`
 * By default, WebAC authorization is enabled on this Fedora installation.
   * Three Fedora user accounts are available:
     * user account `testuser`, with password `password1`
     * user account `adminuser`, with password `password2`
     * admin account `fedoraAdmin` with the password `secret3`
-* To disable access control, edit `install_scripts/config` and change the `FEDORA_AUTH` variable to false.
-* To disable Fedora internal audit capability, edit `install_scripts/config` and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
-* `vagrant up`
+* To disable access control, edit [install_scripts/config](install_scripts/config) and change the `FEDORA_AUTH` variable to false.
+* To disable Fedora internal audit capability, edit [install_scripts/config](install_scripts/config) and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 
-#### Using the backup and restore scripts
+### Using the backup and restore scripts
 The scripts at the ~/backup_restore directory can be used to test backing up and restoring the Fedora repository for consistency.
 
 The following command will cause 50 parallel processes to load data to the repository while creating snapshots of fcrepo home directory every 2 seconds.
@@ -73,6 +70,29 @@ will cause the script to pause for user input after each restore operation.
 ```
 ./restore_runner.sh
 ``` 
+## Customizations
+
+The applications installed on this Vagrant box have been customized to support showcasing features. Some of the configuration of these applications may not be recommended for production installations.
+Application customizations are found in the [install_scripts](install_scripts) directory.
+
+### Fedora Customizations
+
+Beyond the configuration noted in the [Fedora Configuration](#fedora-configuration) section, the installed Fedora application is standard.
+
+### Camel Toolbox Customizations
+
+The following services have been configured with Fedora credentials:
+* Solr indexer
+* Triplestore indexer
+* Fixity service
+* Serialization service
+* Reindexing service
+
+The Solr indexer has been configured to communicate with Solr running on port 8080, instead of the default 8983.
+
+The triplestore indexer has been configurated to NOT include any `Prefer` headers. The production default is to limit the triples to be indexed by omitting `ldp:contains` triples.
+
+The reindexing service has been configurated to bind to the host, `0.0.0.0`, instead of the default `localhost`. This allows the reindexing service to be accessible from outside of the Vagrant VM, i.e. from the host machine. See [camel-jetty documentation](http://camel.apache.org/jetty.html), search for: "Usage of localhost".
 
 ## Support
 
@@ -100,7 +120,7 @@ cd /opt/karaf/bin
 ./client </vagrant/install_scripts/fedora_camel_toolbox.script
 ```
 
-## Windows Troubleshooting
+#### Windows Troubleshooting
 
 If you receive errors involving `\r` (end of line):
 
