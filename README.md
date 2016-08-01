@@ -134,7 +134,7 @@ autocrlf = false
 ```
 Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.
 
-#### Mac Troubleshooting
+#### Boot Troubleshooting
 
 If you encounter authentication errors in the SSH communication between Vagrant and the virtual machine, for example:
 ```
