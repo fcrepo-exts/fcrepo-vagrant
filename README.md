@@ -134,6 +134,43 @@ autocrlf = false
 ```
 Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.
 
+#### Boot Troubleshooting
+
+If you encounter authentication errors in the SSH communication between Vagrant and the virtual machine, for example:
+```
+default: SSH auth method: private key
+default: Warning: Remote connection disconnect. Retrying...
+default: Warning: Authentication failure. Retrying...
+default: Warning: Authentication failure. Retrying...
+...
+Timed out while waiting for the machine to boot. This means that
+Vagrant was unable to communicate with the guest machine within
+the configured ("config.vm.boot_timeout" value) time period.
+```
+First, please check that you are using the latest Vagrant and Virtual Box versions with the following commands:
+```
+$ vboxmanage --version
+$ vagrant -v
+```
+And, if possible, update your software to the latest version available from [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads).  After updating, remove the previously provisioned VM and run the provisioning again:
+```
+$ vagrant halt
+$ vagrant destroy
+$ vagrant up
+```
+Another source of issues is that a previous virtual machine has not shut down cleanly, which can cause conflicts during provisioning leading to VM failure.  To ensure that you have a clean Vagrant environment from which to begin, do:
+```
+$ vagrant global-status
+```
+If there are other Vagrant environments running, these can be shut down through the Virutal Box interface, or by referencing the Vagrant by ID as follows (ID is the first column in the output of the global-status subcommand mentioned above):
+```
+$ vagrant halt [id]
+```
+and, if desired,
+```
+$ vagrant destroy [id]
+```
+
 ## Maintainers
 
 Current maintainers:
