@@ -56,3 +56,4 @@ sed -i 's|rest.host=localhost$|rest.host=0.0.0.0|' /opt/karaf/etc/org.fcrepo.cam
 sed -i 's|fcrepo.authUsername=$|fcrepo.authUsername=fedoraAdmin|' /opt/karaf/etc/org.fcrepo.camel.service.cfg
 sed -i 's|fcrepo.authPassword=$|fcrepo.authPassword=secret3|' /opt/karaf/etc/org.fcrepo.camel.service.cfg
 
+/etc/init.d/karaf-service restart
