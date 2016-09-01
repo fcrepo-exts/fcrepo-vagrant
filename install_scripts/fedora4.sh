@@ -45,4 +45,15 @@ if [ "${FEDORA_AUDIT}" == "true" ] && ! grep -q "${AUDIT_LOCATION_ARG}" /etc/def
   echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.audit.container=${FEDORA_AUDIT_LOCATION}\"" >> /etc/default/tomcat7;
 fi 
 
+if [ "${FEDORA_AUTH}" = "true" ]; then
+  MODESHAPE_CONFIG="classpath:/config/servlet-auth/repository.json"
+else
+  MODESHAPE_CONFIG="classpath:/config/minimal-default/repository.json"
+fi
+
+if ! grep -q "${MODESHAPE_CONFIG}" /etc/default/tomcat7 ; then
+  echo $'\n' >>  /etc/default/tomcat7;
+  echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.modeshape.configuration=${MODESHAPE_CONFIG}\"" >> /etc/default/tomcat7;
+fi
+
 service tomcat7 restart
