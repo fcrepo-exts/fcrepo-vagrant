@@ -19,6 +19,14 @@ if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.service.activemq.cfg" ]; then
    /opt/karaf/bin/client -u karaf -h localhost -a 8101 "feature:install fcrepo-service-activemq"
 fi
 
+# LDPath
+if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.service.ldpath.cfg" ]; then
+  /opt/karaf/bin/client -u karaf -h localhost -a 8101 "feature:install fcrepo-camel-ldpath"
+fi
+sed -i 's|fcrepo.authUsername=$|fcrepo.authUsername=fedoraAdmin|' /opt/karaf/etc/org.fcrepo.camel.ldpath.cfg
+sed -i 's|fcrepo.authPassword=$|fcrepo.authPassword=secret3|' /opt/karaf/etc/org.fcrepo.camel.ldpath.cfg
+
+
 # Solr indexing
 if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.indexing.solr.cfg" ]; then
    /opt/karaf/bin/client -u karaf -h localhost -a 8101 "feature:install fcrepo-indexing-solr"
