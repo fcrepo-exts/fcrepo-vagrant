@@ -14,5 +14,7 @@ echo "Installing Ruby 2.2 dev tools."
 apt-get -y install ruby2.2-dev zlib1g-dev
 echo "Installing sqlite."
 apt-get -y install libsqlite3-dev
+echo "installing nodejs for rails js runtime"
+apt-get install -y nodejs
 echo "Installing the bundler gem at system."
 gem install bundler

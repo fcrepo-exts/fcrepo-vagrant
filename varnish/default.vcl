@@ -39,6 +39,7 @@ sub vcl_hash {
         set req.http.Authorization = req.http.x-auth;
         unset req.http.x-auth;
     }
+    hash_data(req.url);
     return(lookup);
 }
 
