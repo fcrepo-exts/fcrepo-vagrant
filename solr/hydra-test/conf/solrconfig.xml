@@ -32,7 +32,7 @@
   
   <lib dir="${solr.install.dir:..}/lib/contrib" />
   <lib dir="${solr.install.dir:..}/lib/contrib/analysis-extras/lib" />
-  <lib dir="${solr.install.dir:..}/lib/contrib/analysis-extras/lib" />
+  <lib dir="${solr.install.dir:..}/lib/contrib/analysis-extras/lucene-libs" />
   <lib dir="${solr.install.dir:..}/lib/contrib/extraction/lib" />
 
   <directoryFactory name="DirectoryFactory" 
