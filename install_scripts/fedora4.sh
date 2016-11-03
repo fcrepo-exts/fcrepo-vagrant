@@ -48,7 +48,7 @@ fi
 if [ "${FEDORA_AUTH}" = "true" ]; then
   MODESHAPE_CONFIG="classpath:/config/servlet-auth/repository.json"
 else
-  MODESHAPE_CONFIG="classpath:/config/minimal-default/repository.json"
+  MODESHAPE_CONFIG="classpath:/config/file-simple/repository.json"
 fi
 
 if ! grep -q "${MODESHAPE_CONFIG}" /etc/default/tomcat7 ; then
