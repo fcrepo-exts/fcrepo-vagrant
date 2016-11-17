@@ -12,10 +12,10 @@ if [ ! -d $DOWNLOAD_DIR ]; then
   mkdir $DOWNLOAD_DIR
 fi
 
-FEDORA_VERSION=4.6.1-SNAPSHOT
+FEDORA_VERSION=4.6.1
 # FEDORA_TAG will usually be the exact same as FEDORA_VERSION, they are used to download the fcrepo-webapp-plus war file from
 # https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}/fcrepo-webapp-plus-${FEDORA_VERSION}.war
-FEDORA_TAG=4.6.1-RC-2
+FEDORA_TAG=4.6.1
 # true to enable auth, false to disable it
 FEDORA_AUTH=true
 FEDORA_AUDIT=true
