@@ -134,6 +134,23 @@ autocrlf = false
 ```
 Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.
 
+
+#### Mac OSX Troubleshooting
+
+If you receive an error such as:
+```
+The box 'fcrepo/fcrepo4-base' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Atlas, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+URL: ["https://atlas.hashicorp.com/fcrepo/fcrepo4-base"]
+Error: 
+```
+when running `vagrant up`, this is likely the result of the embedded `curl` version in Vagrant 1.8.7 conflicting with the existing binary version in Mac OSX El Capitan or later. To resolve, this remove the embedded `curl` version:
+
+`sudo rm /opt/vagrant/embedded/bin/curl`
+
 #### Boot Troubleshooting
 
 If you encounter authentication errors in the SSH communication between Vagrant and the virtual machine, for example:
