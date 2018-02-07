@@ -32,11 +32,14 @@ if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.indexing.solr.cfg" ]; then
    /opt/karaf/bin/client -u karaf -h localhost -a 8101 "feature:install fcrepo-indexing-solr"
 fi
 sed -i 's|solr.baseUrl=http://localhost:8983/solr/collection1|solr.baseUrl=http://localhost:8080/solr/collection1|' /opt/karaf/etc/org.fcrepo.camel.indexing.solr.cfg
+sed -i 's|error.maxRedeliveries=10|error.maxRedeliveries=1|' /opt/karaf/etc/org.fcrepo.camel.indexing.solr.cfg
+sed -i 's|solr.commitWithin=10000|solr.commitWithin=1000|' /opt/karaf/etc/org.fcrepo.camel.indexing.solr.cfg
 
 # Triplestore indexing
 if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.indexing.triplestore.cfg" ]; then
    /opt/karaf/bin/client -u karaf -h localhost -a 8101 "feature:install fcrepo-indexing-triplestore"
 fi
+sed -i 's|error.maxRedeliveries=10|error.maxRedeliveries=1|' /opt/karaf/etc/org.fcrepo.camel.indexing.triplestore.cfg
 
 # Audit service
 if [ ! -f "/opt/karaf/etc/org.fcrepo.camel.audit.cfg" ]; then
