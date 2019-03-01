@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.box = "fcrepo/fcrepo4-base"
 
 	config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
+	config.vm.network :forwarded_port, guest: 8181, host: 8181 # Hawtio
 	config.vm.network :forwarded_port, guest: 9080, host: 9080 # Fixity and Reindexing
 
   config.vm.provider "virtualbox" do |v|
@@ -22,5 +23,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/fedora4.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/backup_restore.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fedora_camel_toolbox.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/hawtio.sh", args: shared_dir
 
 end
