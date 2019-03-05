@@ -37,6 +37,10 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * Persistent storage `/etc/fuseki/databases/test\_data`
   * [Fcrepo-camel-toolbox 4.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
     * Installed in karaf
+  * [Hawtio 2.5.0](https://hawt.io/)
+    * Available at [http://localhost:8181/hawtio](http://localhost:8181/hawtio)
+    * Access via username = "karaf", password = "karaf"
+    * Installed in karaf
 
 ### Fedora Configuration
 
@@ -93,6 +97,10 @@ The Solr indexer has been configured to communicate with Solr running on port 80
 The triplestore indexer has been configured to NOT include any `Prefer` headers. The production default is to limit the triples to be indexed by omitting `ldp:contains` triples.
 
 The reindexing service has been configured to bind to the host, `0.0.0.0`, instead of the default `localhost`. This allows the reindexing service to be accessible from outside of the Vagrant VM, i.e. from the host machine. See [camel-jetty documentation](http://camel.apache.org/jetty.html), search for: "Usage of localhost".
+
+### Hawtio
+
+Hawtio is a pluggable management console for Java stuff which supports any kind of JVM, any kind of container (Tomcat, Jetty, Wildfly, Karaf, etc), and any kind of Java technology and middleware. It has a Camel plugin, that allows you to gain insight into your running Camel applications.
 
 ## Support
 
