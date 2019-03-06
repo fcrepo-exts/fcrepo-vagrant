@@ -12,8 +12,8 @@ if [ ! -d $DOWNLOAD_DIR ]; then
   mkdir $DOWNLOAD_DIR
 fi
 
-FEDORA_VERSION=4.7.5
-FEDORA_TAG=4.7.5
+FEDORA_VERSION=5.0.2
+FEDORA_TAG=5.0.2
 # true to enable auth, false to disable it
 FEDORA_AUTH=true
 FEDORA_AUDIT=false

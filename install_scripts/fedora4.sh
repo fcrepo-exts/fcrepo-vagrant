@@ -10,18 +10,26 @@ if [ -f "$SHARED_DIR/install_scripts/config" ]; then
   . $SHARED_DIR/install_scripts/config
 fi
 
-if [ "${FEDORA_AUTH}" = "true" ] && [ "${FEDORA_AUDIT}" = "true" ]; then
-  WEBAPP="fcrepo-webapp-plus-webac-audit-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
-elif [ "${FEDORA_AUTH}" = "true" ]; then
-  WEBAPP="fcrepo-webapp-plus-webac-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
-elif [ "${FEDORA_AUDIT}" = "true" ]; then
-  WEBAPP="fcrepo-webapp-plus-audit-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
-else 
-  WEBAPP="fcrepo-webapp-plus-${FEDORA_VERSION}.war"
-  RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+# Converts semantic version strings to numbers
+function version { echo "$@" | gawk -F. '{ printf("%03d%03d%03d\n", $1,$2,$3); }'; }
+
+if [ "$(version ${FEDORA_VERSION})" -lt "$(version 5.0.0)" ]; then
+  if [ -n "${FEDORA_AUTH}" -a -n "${FEDORA_AUDIT}" ] && [ "${FEDORA_AUTH}" = "true" ] && [ "${FEDORA_AUDIT}" = "true" ]; then
+    WEBAPP="fcrepo-webapp-plus-webac-audit-${FEDORA_VERSION}.war"
+    RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+  elif [ -n "${FEDORA_AUTH}" ] && [ "${FEDORA_AUTH}" = "true" ]; then
+    WEBAPP="fcrepo-webapp-plus-webac-${FEDORA_VERSION}.war"
+    RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+  elif [ -n "{$FEDORA_AUDIT}" ] && [ "${FEDORA_AUDIT}" = "true" ]; then
+    WEBAPP="fcrepo-webapp-plus-audit-${FEDORA_VERSION}.war"
+    RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+  else 
+    WEBAPP="fcrepo-webapp-plus-${FEDORA_VERSION}.war"
+    RELEASES="https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-${FEDORA_TAG}"
+  fi
+else
+  WEBAPP="fcrepo-webapp-${FEDORA_VERSION}.war"
+  RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_TAG}"
 fi
 
 cd $HOME_DIR
@@ -31,7 +39,7 @@ chown tomcat7:tomcat7 /var/lib/tomcat7/fcrepo4-data
 chmod g-w /var/lib/tomcat7/fcrepo4-data
 
 if [ ! -f "$DOWNLOAD_DIR/$WEBAPP" ]; then
-  echo -n "Downloading Fedora 4... $RELEASES/$WEBAPP"
+  echo -n "Downloading Fedora... $RELEASES/$WEBAPP"
   curl -L -s -o "$DOWNLOAD_DIR/$WEBAPP" "$RELEASES/$WEBAPP"
   echo " done"
 fi
