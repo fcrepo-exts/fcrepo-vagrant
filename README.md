@@ -35,22 +35,13 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * Installed in `/etc/fuseki`
     * Dataset Path name `/test`
     * Persistent storage `/etc/fuseki/databases/test\_data`
-  * [Fcrepo-camel-toolbox 4.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
+  * [Fcrepo-camel-toolbox 5.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
     * Installed in karaf
   * [Hawtio 2.5.0](https://hawt.io/)
     * Available at [http://localhost:8181/hawtio](http://localhost:8181/hawtio)
     * Access via username = "karaf", password = "karaf"
     * Installed in karaf
 
-### Fedora Configuration
-
-* By default, WebAC authorization is enabled on this Fedora installation.
-  * Three Fedora user accounts are available:
-    * user account `testuser`, with password `password1`
-    * user account `adminuser`, with password `password2`
-    * admin account `fedoraAdmin` with the password `secret3`
-* To disable access control, edit [install_scripts/config](install_scripts/config) and change the `FEDORA_AUTH` variable to false.
-* To disable Fedora internal audit capability, edit [install_scripts/config](install_scripts/config) and change the FEDORA_AUDIT variable to false. The FEDORA_AUDIT_LOCATION can also be changed from its default "/audit", if necessary.
 
 ### Using the backup and restore scripts
 The scripts at the ~/backup_restore directory can be used to test backing up and restoring the Fedora repository for consistency.

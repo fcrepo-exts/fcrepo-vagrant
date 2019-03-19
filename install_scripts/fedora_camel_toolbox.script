@@ -1,6 +1,6 @@
-feature:repo-add mvn:org.apache.activemq/activemq-karaf/5.14.0/xml/features
-feature:repo-add mvn:org.apache.camel.karaf/apache-camel/2.18.0/xml/features
-feature:repo-add mvn:org.fcrepo.camel/toolbox-features/4.7.2/xml/features
+feature:repo-add mvn:org.apache.activemq/activemq-karaf/5.14.1/xml/features
+feature:repo-add mvn:org.apache.camel.karaf/apache-camel/2.20.0/xml/features
+feature:repo-add mvn:org.fcrepo.camel/toolbox-features/5.0.0-SNAPSHOT/xml/features
 feature:install fcrepo-service-activemq
 feature:install fcrepo-ldpath
 feature:install fcrepo-fixity
