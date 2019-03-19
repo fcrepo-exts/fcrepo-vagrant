@@ -43,6 +43,14 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * Installed in karaf
 
 
+### Fedora Configuration
+WebAC authorization is enabled on this Fedora installation.  
+The following three Fedora user accounts are available:
+ * user account `testuser`, with password `password1`
+ * user account `adminuser`, with password `password2`
+ * admin account `fedoraAdmin` with the password `secret3`
+
+
 ### Using the backup and restore scripts
 The scripts at the ~/backup_restore directory can be used to test backing up and restoring the Fedora repository for consistency.
 
