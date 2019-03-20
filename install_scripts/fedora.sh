@@ -1,5 +1,5 @@
 ############
-# Fedora 4
+# Fedora 
 ############
 
 echo "Installing Fedora."
@@ -20,7 +20,7 @@ chown tomcat7:tomcat7 /var/lib/tomcat7/fcrepo4-data
 chmod g-w /var/lib/tomcat7/fcrepo4-data
 
 if [ ! -f "$DOWNLOAD_DIR/$WEBAPP" ]; then
-  echo -n "Downloading Fedora 4... $RELEASES/$WEBAPP"
+  echo -n "Downloading Fedora... $RELEASES/$WEBAPP"
   curl -L -s -o "$DOWNLOAD_DIR/$WEBAPP" "$RELEASES/$WEBAPP"
   echo " done"
 fi

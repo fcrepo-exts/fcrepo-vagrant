@@ -21,7 +21,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
   * [Tomcat 7](http://tomcat.apache.org)
     * Available at:  [http://localhost:8080/manager/html](http://localhost:8080/manager/html)
     * Manager username = "fedora4", password = "fedora4"
-  * [Fedora 4.x](http://fedorarepository.org)
+  * [Fedora 5.x](http://fedorarepository.org)
     * Available at: [http://localhost:8080/fcrepo](http://localhost:8080/fcrepo)
     * Authentication/Authorization configuration detailed below
   * [Solr 4.10.3](http://lucene.apache.org/solr/)
