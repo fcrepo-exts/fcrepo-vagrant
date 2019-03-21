@@ -34,11 +34,7 @@ fi
 
 
 if [ -z "${MODESHAPE_CONFIG}" ]; then
-  if [ "${FEDORA_AUTH}" = "true" ]; then
-    MODESHAPE_CONFIG="classpath:/config/servlet-auth/repository.json"
-  else
-    MODESHAPE_CONFIG="classpath:/config/file-simple/repository.json"
-  fi
+  MODESHAPE_CONFIG="classpath:/config/servlet-auth/repository.json"
 fi
 
 if ! grep -q "fcrepo.modeshape.configuration" /etc/default/tomcat7 ; then

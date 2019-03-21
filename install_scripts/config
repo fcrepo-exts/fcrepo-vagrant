@@ -14,10 +14,6 @@ fi
 
 FEDORA_VERSION=5.0.2
 FEDORA_TAG=5.0.2
-# true to enable auth, false to disable it
-FEDORA_AUTH=true
-FEDORA_AUDIT=false
-FEDORA_AUDIT_LOCATION=/audit
 
 # Configure a JDBC backend, switching this will require destroying and re-provisioning vagrant
 FEDORA_JDBC_STORE=file
