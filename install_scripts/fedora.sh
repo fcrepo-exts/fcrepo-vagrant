@@ -42,4 +42,12 @@ if ! grep -q "fcrepo.modeshape.configuration" /etc/default/tomcat7 ; then
   echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.modeshape.configuration=${MODESHAPE_CONFIG}\"" >> /etc/default/tomcat7;
 fi
 
+if [ ! -f "$HOME_DIR/fcrepo-config.xml" ]; then
+  cp "$SHARED_DIR/install_scripts/fcrepo-config.xml" $HOME_DIR
+fi
+
+if ! grep -q "fcrepo.spring.configuration" /etc/default/tomcat7 ; then
+  echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.spring.configuration=file://${HOME_DIR}/fcrepo-config.xml\"" >> /etc/default/tomcat7;
+fi
+
 service tomcat7 restart
