@@ -10,13 +10,11 @@ apt-get -y install mysql-server
 sleep 2
 echo 'DROP DATABASE IF EXISTS fcrepo; CREATE DATABASE fcrepo; grant all privileges on fcrepo.* to "fedora_user"@"localhost"; SET PASSWORD for "fedora_user"@"localhost" = PASSWORD("fedora_passwd"); flush privileges;' | mysql -u root -p'fedoraMySQL'
 
-if [ "${FEDORA_AUTH}" = "true" ]; then
-  if [ -f "/var/lib/tomcat7/webapps/fcrepo/WEB-INF/classes/config/jdbc-mysql/repository.json" ]; then
-    sed -i 's/"org.fcrepo.auth.common.BypassSecurityServletAuthenticationProvider"/"org.fcrepo.auth.common.ServletContainerAuthenticationProvider"/' /var/lib/tomcat7/webapps/fcrepo/WEB-INF/classes/config/jdbc-mysql/repository.json
-  else 
-   print "CAN'T SEE THE REPOSITORY CONFIGURATION FILES!!"
-   exit
-  fi
+if [ -f "/var/lib/tomcat7/webapps/fcrepo/WEB-INF/classes/config/jdbc-mysql/repository.json" ]; then
+  sed -i 's/"org.fcrepo.auth.common.BypassSecurityServletAuthenticationProvider"/"org.fcrepo.auth.common.ServletContainerAuthenticationProvider"/' /var/lib/tomcat7/webapps/fcrepo/WEB-INF/classes/config/jdbc-mysql/repository.json
+else 
+ print "CAN'T SEE THE REPOSITORY CONFIGURATION FILES!!"
+ exit
 fi
 
 if ! grep -q "fcrepo.modeshape.configuration" /etc/default/tomcat7 ; then
