@@ -42,4 +42,7 @@ if ! grep -q "fcrepo.modeshape.configuration" /etc/default/tomcat7 ; then
   echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.modeshape.configuration=${MODESHAPE_CONFIG}\"" >> /etc/default/tomcat7;
 fi
 
+echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.external.content.allowed=$SHARED_DIR/install_scripts/external-content-allowed-paths.txt\"" >> /etc/default/tomcat7;
+echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.properties.management=relaxed\"" >> /etc/default/tomcat7;
+
 service tomcat7 restart
