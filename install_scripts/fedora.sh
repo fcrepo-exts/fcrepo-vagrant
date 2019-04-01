@@ -11,7 +11,7 @@ if [ -f "$SHARED_DIR/install_scripts/config" ]; then
 fi
 
 WEBAPP="fcrepo-webapp-${FEDORA_VERSION}.war"
-RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_VERSION}"
+RELEASES="https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-${FEDORA_TAG}"
 
 cd $HOME_DIR
 
