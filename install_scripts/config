@@ -12,8 +12,8 @@ if [ ! -d $DOWNLOAD_DIR ]; then
   mkdir $DOWNLOAD_DIR
 fi
 
-FEDORA_VERSION=5.0.2
-FEDORA_TAG=5.0.2
+FEDORA_VERSION=5.1.0
+FEDORA_TAG=5.1.0
 
 # Configure a JDBC backend, switching this will require destroying and re-provisioning vagrant
 FEDORA_JDBC_STORE=file
