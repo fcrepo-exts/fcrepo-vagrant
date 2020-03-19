@@ -12,6 +12,8 @@ fi
 
 cd $HOME_DIR
 
+sed -i 's@http://repo1.maven.org@https://repo1.maven.org@' /opt/karaf/etc/org.ops4j.pax.url.mvn.cfg
+
 /opt/karaf/bin/client -u karaf -h localhost -a 8101 -f "$SHARED_DIR/install_scripts/fedora_camel_toolbox.script"
 
 # ActiveMQ
