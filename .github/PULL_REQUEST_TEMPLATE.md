@@ -35,4 +35,4 @@ Example:
 * Could this change impact execution of existing code?
 
 # Interested parties
-Tag (@ mention) interested parties or, if unsure, @fcrepo4/committers
+Tag (@ mention) interested parties or, if unsure, @fcrepo/committers
