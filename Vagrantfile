@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	
 	config.vm.hostname = "fedora4"
 
-	config.vm.box = "fcrepo/fcrepo4-base"
+	config.vm.box = "fcrepo/fcrepo-base"
 
 	config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
 	config.vm.network :forwarded_port, guest: 8181, host: 8181 # Hawtio

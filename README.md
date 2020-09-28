@@ -1,5 +1,5 @@
-# fcrepo4-vagrant
-Fedora 4 Vagrant Virtual Machine 
+# fcrepo-vagrant
+Fedora Vagrant Virtual Machine 
 
 ## Requirements
 
@@ -9,8 +9,8 @@ Fedora 4 Vagrant Virtual Machine
 ## Usage
 
 1. Install Vagrant and VirtualBox
-2. `git clone https://github.com/fcrepo4-exts/fcrepo4-vagrant.git`
-3. `cd fcrepo4-vagrant`
+2. `git clone https://github.com/fcrepo-exts/fcrepo-vagrant.git`
+3. `cd fcrepo-vagrant`
 4. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
@@ -35,7 +35,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
     * Installed in `/etc/fuseki`
     * Dataset Path name `/test`
     * Persistent storage `/etc/fuseki/databases/test\_data`
-  * [Fcrepo-camel-toolbox 5.x](https://github.com/fcrepo4-exts/fcrepo-camel-toolbox)
+  * [Fcrepo-camel-toolbox 5.x](https://github.com/fcrepo-exts/fcrepo-camel-toolbox)
     * Installed in karaf
   * [Hawtio 2.5.0](https://hawt.io/)
     * Available at [http://localhost:8181/hawtio](http://localhost:8181/hawtio)
@@ -144,12 +144,12 @@ Remove and clone again. This will prevent Windows git clients from automatically
 
 If you receive an error such as:
 ```
-The box 'fcrepo/fcrepo4-base' could not be found or
+The box 'fcrepo/fcrepo-base' could not be found or
 could not be accessed in the remote catalog. If this is a private
 box on HashiCorp's Atlas, please verify you're logged in via
 `vagrant login`. Also, please double-check the name. The expanded
 URL and error message are shown below:
-URL: ["https://atlas.hashicorp.com/fcrepo/fcrepo4-base"]
+URL: ["https://atlas.hashicorp.com/fcrepo/fcrepo-base"]
 Error: 
 ```
 when running `vagrant up`, this is likely the result of the embedded `curl` version in Vagrant 1.8.7 conflicting with the existing binary version in Mac OSX El Capitan or later. To resolve, this remove the embedded `curl` version:
